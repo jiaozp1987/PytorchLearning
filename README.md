@@ -15,10 +15,22 @@
 ### 文档
     https://pytorch.apachecn.org/
 
-## pytorch中的tensor
+# pytorch中的tensor
 ![img.png](imgs/img.png)
-### Variable对象
+## Variable对象
     1.神经网络在做运算的时候需要先构造一个计算图，然后在里面进行前向传播和反向传播，传播过程中通过求导以获得梯度。不同于编程语言中的变量，pytorch中的Variable(变量)是神经网络计算图里中一个特殊概念，提供了自动求导功能。
     2.在Pytorch中，Variable 利Tensor本质上没有区别，不过Variable 可以被放人一个计算图中，然后进行前向传播，反向传播，自动求导， 
     3.Variable的结构包括三部分:data即Variable中的Tensor数值;grad fn是得到这个Variable的操作，比如加减或乘除;grad是这个Variable的反向传播梯度。
 ![img.png](imgs/img_083001.png)
+## 叶节点
+    由用户直接创建的计算图Variable对象
+    叶子节点的梯度在反向传播后会被保留
+# pytorch 中数据集相关类
+![img.png](imgs/img_083002.png)
+## DataLoader（数据装载器）
+    DataLoader会构建一个可迭代的数据装载器，在训练过程中将白定义的数据集根据batch size大小、是否shuffle等封装成一个又一个batch大小的Tensor数据给模型进行训练和测试。
+    常用参数：dataset(加载数据的数据集)、batch size(每个batch加载多少个样本)shuffle(是否随机打乱顺序)、num workers(使用多少个子线程加载数据)
+## ImageFolder（图像目录加载器）
+    ImageFolder类可以读取按目录分类存放的图像数据，建立数据集，
+    from torchvision.datasets import ImageFolder
+![img.png](imgs/img_083003.png)
