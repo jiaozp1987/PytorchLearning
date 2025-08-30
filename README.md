@@ -8,5 +8,9 @@
 ## 环境搭建
 ### 离线下载地址
     https://download.pytorch.org/whl/torch_stable.html
+### 安装包
+    torch-2.3.0+cu118-cp312-cp312-win_amd64.whl
+    torchaudio-2.3.0+cu118-cp312-cp312-win_amd64.whl
+    torchvision-0.18.0+cu118-cp312-cp312-win_amd64.whl
 ### 文档
     https://pytorch.apachecn.org/
